@@ -16,15 +16,17 @@ The workflow is intentionally optimized for runtime:
 
 ## Schedule
 
-The workflow runs every 5 minutes:
+The workflow is manual-only right now because GitHub-hosted runners receive a
+403 bot-protection page from The Great Reviewer API. The 5-minute schedule is
+kept in comments for reference:
 
 ```yaml
 cron: "2/5 * * * *"
 ```
 
 GitHub's shortest scheduled interval is 5 minutes. Scheduled runs can be delayed
-or dropped under high load, so this is best-effort monitoring rather than a hard
-real-time guarantee.
+or dropped under high load, so even if the source later allows GitHub runners,
+this is best-effort monitoring rather than a hard real-time guarantee.
 
 ## Alerts
 
